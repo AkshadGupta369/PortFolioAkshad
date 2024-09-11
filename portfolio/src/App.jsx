@@ -1,36 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import './App.css'
-import ParticlesComponent from './background/Particles';
+import ParticleBg from './background/ParticleBg'
+import HomePage from './Home/HomePage.jsx';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='App'>
+    <ParticleBg/>
+    <div className='Appcontent'>
+<Router>
+  <Routes>
+  <Route exact path="/" element={<HomePage/>}></Route>
+  </Routes>
+</Router>
+    </div>
+    </div>
 
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <ParticlesComponent/>
+    {/* <h1 style={{color:"white",zIndex:2,position:'relative'}}>Hi my name is Akshad</h1> */}
     </>
   )
 }
