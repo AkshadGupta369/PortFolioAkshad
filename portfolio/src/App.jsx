@@ -8,7 +8,7 @@ import HomePage from './Home/HomePage.jsx';
 function App() {
   return (
     <>
-    <div className='App'>
+    <div className='App' style={{height:"100vh",width:"100%"}}>
     <ParticleBg/>
     <div className='Appcontent'>
 <Router>
